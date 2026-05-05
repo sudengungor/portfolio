@@ -1,0 +1,260 @@
+section {
+    padding: 80px 10%; /* Üst-Alt: 80px, Sağ-Sol: %10 */
+}
+
+/* --- 1. Global Reset & Variables --- */
+/* --- Pembemsi Renk Paleti --- */
+:root {
+    --primary-color: #db2777;    /* Canlı pembe (buttons, links) */
+    --secondary-color: #9d174d;  /* Koyu pembe/vişne (subtitles) */
+    --bg-color: #fff1f2;         /* Çok açık pembe arka plan */
+    --text-color: #4c0519;       /* Çok koyu pembe/siyahımsı metin */
+    --card-bg: #ffffff;          /* Kartlar için temiz beyaz */
+    --border-color: #fecdd3;     /* İnce pembe kenarlıklar */
+    --transition: all 0.3s ease;
+}
+
+/* Dark Mode İçin Pembemsi Tonlar */
+/* Dark Mode İçin Soft & Pembemsi Tonlar */
+body.dark-theme {
+    --bg-color: #1e050f;         /* Çok koyu mürdüm (Siyah değil) */
+    --text-color: #fce7f3;       /* Çok açık pudra pembesi metin */
+    --card-bg: #2d0a1a;          /* Koyu pembe/vişne kartlar */
+    --border-color: #4c0519;     /* Derin bordo kenarlıklar */
+}
+
+/* Dark mode'da butonların çok parlamaması için ufak bir ayar */
+body.dark-theme .btn.primary {
+    background: #be185d;        /* Bir ton daha koyu pembe */
+    color: #fff;
+}
+
+/* Resimlerin dark mode'da göz yormaması için hafif parlaklık kısma */
+body.dark-theme img {
+    filter: brightness(0.8) contrast(1.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* CSS Box Model Requirement */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+/* --- 2. Navigation (Flexbox) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- 3. Hero Section --- */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 1rem 0.5rem;
+    font-weight: 600;
+}
+
+.btn.primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* --- 4. Tables (Academic Timeline) --- */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+.styled-table thead tr {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* --- 5. Projects Grid (CSS Grid) --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.img-placeholder {
+    height: 200px;
+    background: #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+/* --- 6. Contact Form --- */
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    padding: 12px 15px; /* Yazı ile kutu kenarı arası boşluk */
+    margin-bottom: 10px; /* Kutular arası dış boşluk */
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    width: 100%;
+}
+
+.styled-table th, 
+.styled-table td {
+    padding: 15px 20px; /* Tablo hücre içi boşluk */
+    text-align: left;
+}
+
+input, textarea {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+.submit-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+footer {
+    padding: 2rem 0;
+    background-color: var(--card-bg); /* Mevcut arka plan rengini korur */
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column; /* İçerikleri alt alta dizer */
+    align-items: center;    /* Yatayda ortalar */
+    justify-content: center; /* Dikeyde (ihtiyaç varsa) ortalar */
+    text-align: center;      /* P etiketinin içindeki metni ortalar */
+}
+
+.footer-container p {
+    margin-top: 10px;        /* Sosyal linklerle arasına boşluk koyar */
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;             /* Linklerin arasını açar */
+    margin-bottom: 0.5rem;
+}
+
+/* --- 7. Responsive Design (Media Queries) --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* JS ile açılacak */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
