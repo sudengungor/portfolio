@@ -1,5 +1,5 @@
 <?php
-include 'db.php'; // Veritabanı bağlantısını çağır
+include 'database_connection.php'; // Veritabanı bağlantısını çağır
 
 header('Content-Type: application/json'); // Çıktının JSON olduğunu belirt
 

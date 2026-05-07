@@ -20,7 +20,7 @@
                 <a href="#">sudenurgungor<span>.</span></a>
             </div>
             
-            <div class="menu-toggle" id="mobile-menu" aria-label="Open Menu"> // 3 çizgi
+            <div class="menu-toggle" id="mobile-menu" aria-label="Open Menu"> 
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -112,7 +112,7 @@
                 <h2>Get In Touch</h2>
                 <p>Have a project in mind? Let's talk.</p>
                 
-                <form id="contact-form" action="php/save_contact.php" method="POST">
+                <form id="contact-form" action="php/store_message.php" method="POST">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Full Name</label>
