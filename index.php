@@ -20,7 +20,7 @@
                 <a href="#">sudenurgungor<span>.</span></a>
             </div>
             
-            <div class="menu-toggle" id="mobile-menu" aria-label="Open Menu">
+            <div class="menu-toggle" id="mobile-menu" aria-label="Open Menu"> // 3 çizgi
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
