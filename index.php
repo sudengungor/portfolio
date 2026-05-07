@@ -149,7 +149,6 @@
         </div>
     </footer>
 
-    <!-- JS Bağlantısı: İsminin doğru olduğundan emin ol -->
     <script src="main.js"></script>
 </body>
 </html>
