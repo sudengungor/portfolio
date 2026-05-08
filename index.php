@@ -43,16 +43,22 @@ include 'php/database_connection.php';
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero-section">
-            <div class="hero-content">
-                <h1>Sudenur Güngör</h1>
-                <p>Third-year <strong>Software Engineering</strong> student focused on Mobile Development and Web Development.</p>
-                <div class="hero-btns">
-                    <a href="#projects" class="btn primary">View My Work</a>
-                    <a href="#contact" class="btn secondary">Hire Me</a>
+            <div class="hero-container">
+                <!-- Profil Fotoğrafı Alanı -->
+                <div class="profile-img-container">
+                    <img src="images/profile_image.png" alt="Sudenur Güngör" class="profile-pp">
+                </div>
+                
+                <div class="hero-content">
+                    <h1>Sudenur Güngör</h1>
+                    <p>Third-year <strong>Software Engineering</strong> student at Haliç University.</p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn primary">View My Work</a>
+                        <a href="#contact" class="btn secondary">Hire Me</a>
+                    </div>
                 </div>
             </div>
         </section>
-
         <!-- About Section -->
         <section id="about" class="about-section">
             <div class="container">
@@ -108,7 +114,7 @@ include 'php/database_connection.php';
                     if ($result && $result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
                             echo '<div class="project-card">';
-                            echo '    <img src="' . htmlspecialchars($row['image_url']) . '" alt="Project Image" style="width:100%; border-radius:8px;">';
+                            echo '<img src="' . htmlspecialchars($row['image_url']) . '" alt="Project Image">';
                             echo '    <h3>' . htmlspecialchars($row['title']) . '</h3>';
                             echo '    <p>' . htmlspecialchars($row['description']) . '</p>';
                             echo '    <p class="tech-stack"><strong>Tech:</strong> ' . htmlspecialchars($row['tech_stack']) . '</p>';

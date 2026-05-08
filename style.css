@@ -105,6 +105,31 @@ body {
     margin-bottom: 1rem;
 }
 
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px; /* Fotoğraf ve yazı arasındaki boşluk */
+    flex-wrap: wrap; /* Mobilde alt alta gelmeleri için */
+}
+
+.profile-pp {
+    width: 200px; /* Fotoğraf boyutu */
+    height: 200px;
+    border-radius: 50%; /* Tam yuvarlak yapar */
+    object-fit: cover; /* Fotoğrafı sünnetmeden kutuya sığdırır */
+    border: 4px solid #4a1a3a; /* Temana uygun bir çerçeve rengi */
+    box-shadow: 0 0 20px rgba(74, 26, 58, 0.5); /* Hafif parlama efekti */
+}
+
+/* Mobilde fotoğrafın yazının üstünde ortalanması için */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 .btn {
     display: inline-block;
     padding: 0.8rem 2rem;
@@ -142,17 +167,45 @@ body {
 /* --- 5. Projects Grid (CSS Grid) --- */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
+    /* Bir satıra 3 tane eşit genişlikte sütun oluşturur */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; /* Kartlar arasındaki boşluk */
+    padding: 20px 0;
+}
+
+/* Tabletler için (Ekran küçülünce 2'li olsun) */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Telefonlar için (Ekran iyice küçülünce tekli olsun) */
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .project-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    overflow: hidden;
+    background: #2a0a1a; /* Senin temana uygun koyu bir renk */
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #4a1a3a;
     transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Üzerine gelince hafifçe yukarı kalksın */
+}
+
+.project-card img {
+    width: 100%;
+    height: 160px; /* 200px'den 160px'e çektik */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .project-card:hover {
