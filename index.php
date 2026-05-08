@@ -1,3 +1,7 @@
+<?php 
+// Veritabanı bağlantısını en üste ekliyoruz
+include 'php/database_connection.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,15 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional Portfolio of Sudenur Güngör - Software Engineer & Flutter Developer">
     <title>Sudenur Güngör | Software Engineering Portfolio</title>
-    
-    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Header & Navigation -->
     <header>
         <nav class="navbar" id="navbar">
             <div class="logo">
@@ -95,13 +95,31 @@
             </div>
         </section>
 
-        <!-- Projects Section (Dynamic Content Container) -->
+        <!-- Projects Section (DÜZELTİLEN ALAN) -->
         <section id="projects" class="projects-section">
             <div class="container">
                 <h2>Featured Projects</h2>
-                <!-- Bu alan JavaScript (AJAX) tarafından otomatik doldurulacak -->
-                <div class="projects-grid" id="projects-grid">
-                    <p class="loading-text">Loading projects from database...</p>
+                <div class="projects-grid">
+                    <?php
+                    // Veritabanından projeleri çekiyoruz
+                    $query = "SELECT * FROM projects ORDER BY id DESC";
+                    $result = $conn->query($query);
+
+                    if ($result && $result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            echo '<div class="project-card">';
+                            echo '    <img src="' . htmlspecialchars($row['image_url']) . '" alt="Project Image" style="width:100%; border-radius:8px;">';
+                            echo '    <h3>' . htmlspecialchars($row['title']) . '</h3>';
+                            echo '    <p>' . htmlspecialchars($row['description']) . '</p>';
+                            echo '    <p class="tech-stack"><strong>Tech:</strong> ' . htmlspecialchars($row['tech_stack']) . '</p>';
+                           // github_url isminin doğru olduğundan emin ol
+                            echo '<a href="' . htmlspecialchars($row['github_url']) . '" target="_blank" class="btn">View on GitHub</a>';
+                            echo '</div>';
+                        }
+                    } else {
+                        echo "<p>Henüz bir proje eklenmemiş. Admin panelinden eklemeyi dene!</p>";
+                    }
+                    ?>
                 </div>
             </div>
         </section>
@@ -110,9 +128,7 @@
         <section id="contact" class="contact-section">
             <div class="container">
                 <h2>Get In Touch</h2>
-                <p>Have a project in mind? Let's talk.</p>
-                
-                <form id="contact-form" action="php/store_message.php" method="POST">
+                <form action="php/store_message.php" method="POST">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Full Name</label>
@@ -131,14 +147,12 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="5" placeholder="Your message details..." required></textarea>
                     </div>
-                    <button type="submit" class="submit-btn" id="submit-btn">Send Message</button>
-                    <p id="form-response"></p>
+                    <button type="submit" class="submit-btn">Send Message</button>
                 </form>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="social-links">
