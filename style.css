@@ -129,6 +129,23 @@ section {
     transform: translateY(-2px);
 }
 
+.submit-btn {
+    background-color: var(--primary-color) !important; /* Canlı pembe rengin */
+    color: white !important;
+    padding: 12px 25px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Inter', sans-serif;
+}
+
+.submit-btn:hover {
+    background-color: var(--secondary-color) !important; /* Üzerine gelince koyulaşsın */
+    transform: translateY(-2px);
+}
+
 /* --- 4. Tables (Academic Timeline) --- */
 .styled-table {
     width: 100%;
@@ -202,7 +219,7 @@ section {
 input, textarea {
     width: 100%;
     padding: 12px 15px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     background: var(--card-bg);
@@ -217,13 +234,18 @@ input, textarea {
     border: 1px solid var(--border-color) !important;
     border-left: 6px solid var(--primary-color) !important; /* Sol şerit rengi */
     padding: 20px !important;
-    margin-bottom: 15px !important;
+    margin-bottom: 25px !important;
     border-radius: 10px !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
     box-shadow: 0 2px 8px rgba(0,0,0,0.02) !important;
     color: var(--text-color) !important;
+}
+
+.manage-projects > h3 {
+    display: block;
+    padding-bottom: 15px; /* Başlığın altından extra padding */
 }
 
 /* Sil Butonu */
