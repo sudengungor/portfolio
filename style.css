@@ -1,43 +1,26 @@
-section {
-    padding: 80px 10%; /* Üst-Alt: 80px, Sağ-Sol: %10 */
-}
-
 /* --- 1. Global Reset & Variables --- */
-/* --- Pembemsi Renk Paleti --- */
 :root {
-    --primary-color: #db2777;    /* Canlı pembe (buttons, links) */
-    --secondary-color: #9d174d;  /* Koyu pembe/vişne (subtitles) */
+    --primary-color: #db2777;    /* Canlı pembe */
+    --secondary-color: #9d174d;  /* Koyu pembe/vişne */
     --bg-color: #fff1f2;         /* Çok açık pembe arka plan */
-    --text-color: #4c0519;       /* Çok koyu pembe/siyahımsı metin */
-    --card-bg: #ffffff;          /* Kartlar için temiz beyaz */
+    --text-color: #4c0519;       /* Çok koyu pembe metin */
+    --card-bg: #ffffff;          /* Temiz beyaz kartlar */
     --border-color: #fecdd3;     /* İnce pembe kenarlıklar */
     --transition: all 0.3s ease;
 }
 
-/* Dark Mode İçin Pembemsi Tonlar */
-/* Dark Mode İçin Soft & Pembemsi Tonlar */
+/* Dark Mode Tonları */
 body.dark-theme {
-    --bg-color: #1e050f;         /* Çok koyu mürdüm (Siyah değil) */
-    --text-color: #fce7f3;       /* Çok açık pudra pembesi metin */
-    --card-bg: #2d0a1a;          /* Koyu pembe/vişne kartlar */
-    --border-color: #4c0519;     /* Derin bordo kenarlıklar */
-}
-
-/* Dark mode'da butonların çok parlamaması için ufak bir ayar */
-body.dark-theme .btn.primary {
-    background: #be185d;        /* Bir ton daha koyu pembe */
-    color: #fff;
-}
-
-/* Resimlerin dark mode'da göz yormaması için hafif parlaklık kısma */
-body.dark-theme img {
-    filter: brightness(0.8) contrast(1.1);
+    --bg-color: #1e050f;         
+    --text-color: #fce7f3;       
+    --card-bg: #2d0a1a;          
+    --border-color: #4c0519;     
 }
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* CSS Box Model Requirement */
+    box-sizing: border-box;
 }
 
 html {
@@ -52,7 +35,11 @@ body {
     transition: var(--transition);
 }
 
-/* --- 2. Navigation (Flexbox) --- */
+section {
+    padding: 80px 10%;
+}
+
+/* --- 2. Navigation --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -64,6 +51,7 @@ body {
     background: var(--bg-color);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
+    transition: var(--transition);
 }
 
 .logo a {
@@ -97,7 +85,23 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 10%;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.profile-pp {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(219, 39, 119, 0.3);
 }
 
 .hero-content h1 {
@@ -105,38 +109,14 @@ body {
     margin-bottom: 1rem;
 }
 
-.hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px; /* Fotoğraf ve yazı arasındaki boşluk */
-    flex-wrap: wrap; /* Mobilde alt alta gelmeleri için */
-}
-
-.profile-pp {
-    width: 200px; /* Fotoğraf boyutu */
-    height: 200px;
-    border-radius: 50%; /* Tam yuvarlak yapar */
-    object-fit: cover; /* Fotoğrafı sünnetmeden kutuya sığdırır */
-    border: 4px solid #4a1a3a; /* Temana uygun bir çerçeve rengi */
-    box-shadow: 0 0 20px rgba(74, 26, 58, 0.5); /* Hafif parlama efekti */
-}
-
-/* Mobilde fotoğrafın yazının üstünde ortalanması için */
-@media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
 .btn {
     display: inline-block;
     padding: 0.8rem 2rem;
-    border-radius: 5px;
+    border-radius: 8px;
     text-decoration: none;
     margin: 1rem 0.5rem;
     font-weight: 600;
+    transition: var(--transition);
 }
 
 .btn.primary {
@@ -144,13 +124,20 @@ body {
     color: white;
 }
 
+.btn.primary:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
 /* --- 4. Tables (Academic Timeline) --- */
 .styled-table {
     width: 100%;
     border-collapse: collapse;
     margin: 2rem 0;
-    font-size: 0.9rem;
-    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    background-color: var(--card-bg); /* Kart rengini alsın */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .styled-table thead tr {
@@ -160,154 +147,115 @@ body {
 }
 
 .styled-table th, .styled-table td {
-    padding: 12px 15px;
+    padding: 15px 20px;
     border-bottom: 1px solid var(--border-color);
 }
 
-/* --- 5. Projects Grid (CSS Grid) --- */
+/* --- 5. Projects Grid --- */
 .projects-grid {
     display: grid;
-    /* Bir satıra 3 tane eşit genişlikte sütun oluşturur */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 25px; /* Kartlar arasındaki boşluk */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Daha esnek yapı */
+    gap: 25px;
     padding: 20px 0;
 }
 
-/* Tabletler için (Ekran küçülünce 2'li olsun) */
-@media (max-width: 992px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Telefonlar için (Ekran iyice küçülünce tekli olsun) */
-@media (max-width: 600px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 .project-card {
-    background: #2a0a1a; /* Senin temana uygun koyu bir renk */
+    /* Eski hali: background: #2a0a1a; -> Bunu siliyoruz */
+    background: var(--card-bg); /* Değişkeni buraya bağladık */
     border-radius: 12px;
     padding: 15px;
     text-align: center;
-    border: 1px solid #4a1a3a;
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px); /* Üzerine gelince hafifçe yukarı kalksın */
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, background 0.3s ease; /* Arka plan geçişi de yumuşak olsun */
 }
 
 .project-card img {
     width: 100%;
-    height: 160px; /* 200px'den 160px'e çektik */
+    height: 180px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
     margin-bottom: 15px;
 }
 
+
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.img-placeholder {
-    height: 200px;
-    background: #cbd5e1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* --- 6. Admin & Form Styles --- */
+.admin-wrapper {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 0 20px;
 }
 
-.project-info {
-    padding: 1.5rem;
-}
-
-/* --- 6. Contact Form --- */
-#contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
+.admin-form-card {
+    background: var(--card-bg); /* Bembeyaz kart */
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
 }
 
 input, textarea {
-    padding: 12px 15px; /* Yazı ile kutu kenarı arası boşluk */
-    margin-bottom: 10px; /* Kutular arası dış boşluk */
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
     width: 100%;
-}
-
-.styled-table th, 
-.styled-table td {
-    padding: 15px 20px; /* Tablo hücre içi boşluk */
-    text-align: left;
-}
-
-input, textarea {
-    padding: 0.8rem;
+    padding: 12px 15px;
+    margin-bottom: 20px;
     border: 1px solid var(--border-color);
-    border-radius: 5px;
+    border-radius: 8px;
     background: var(--card-bg);
     color: var(--text-color);
+    font-family: inherit;
 }
 
-.submit-btn {
-    background: var(--primary-color);
-    color: white;
-    padding: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* Proje Listesi Kutuları (İstediğin Sade Hal) */
+.manage-project-item, 
+.manage-projects div[style*="background: #fff"] {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-left: 6px solid var(--primary-color) !important; /* Sol şerit rengi */
+    padding: 20px !important;
+    margin-bottom: 15px !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02) !important;
+    color: var(--text-color) !important;
+}
+
+/* Sil Butonu */
+.manage-projects a {
+    color: #e11d48 !important; /* Modern kırmızı */
+    text-decoration: none;
     font-weight: 700;
 }
 
+/* --- 7. Footer --- */
 footer {
-    padding: 2rem 0;
-    background-color: var(--card-bg); /* Mevcut arka plan rengini korur */
+    padding: 3rem 0;
+    background-color: var(--card-bg);
     border-top: 1px solid var(--border-color);
-    width: 100%;
+    text-align: center;
 }
 
 .footer-container {
     display: flex;
-    flex-direction: column; /* İçerikleri alt alta dizer */
-    align-items: center;    /* Yatayda ortalar */
-    justify-content: center; /* Dikeyde (ihtiyaç varsa) ortalar */
-    text-align: center;      /* P etiketinin içindeki metni ortalar */
-}
-
-.footer-container p {
-    margin-top: 10px;        /* Sosyal linklerle arasına boşluk koyar */
-    color: var(--secondary-color);
-    font-size: 0.9rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .social-links {
     display: flex;
-    gap: 1.5rem;             /* Linklerin arasını açar */
-    margin-bottom: 0.5rem;
+    gap: 1.5rem;
 }
 
-/* --- 7. Responsive Design (Media Queries) --- */
+/* --- 8. Responsive --- */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* JS ile açılacak */
-    }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-container { flex-direction: column; }
+    .navbar { padding: 1rem 5%; }
 }

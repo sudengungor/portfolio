@@ -7,14 +7,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = $_POST['subject'];
     $message = $_POST['message'];
 
-    try {
-        $sql = "INSERT INTO messages (full_name, email, subject, message) VALUES (?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute([$name, $email, $subject, $message]);
-        
+    // MySQLi kullanarak güvenli kayıt (Prepared Statement)
+    $sql = "INSERT INTO messages (full_name, email, subject, message) VALUES (?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssss", $name, $email, $subject, $message);
+
+    if ($stmt->execute()) {
         echo "Success: Your message has been saved!";
-    } catch(PDOException $e) {
-        echo "Error: " . $e->getMessage();
+    } else {
+        echo "Error: " . $conn->error;
     }
 }
 ?>
