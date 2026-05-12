@@ -9,7 +9,7 @@ include 'php/database_connection.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional Portfolio of Sudenur Güngör - Software Engineer & Flutter Developer">
     <title>Sudenur Güngör | Software Engineering Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -46,7 +46,7 @@ include 'php/database_connection.php';
             <div class="hero-container">
                 <!-- Profil Fotoğrafı Alanı -->
                 <div class="profile-img-container">
-                    <img src="images/profile_image.png" alt="Sudenur Güngör" class="profile-pp">
+                    <img src="assets/profile_image.png" alt="Sudenur Güngör" class="profile-pp">
                 </div>
                 
                 <div class="hero-content">
@@ -169,6 +169,6 @@ include 'php/database_connection.php';
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="assets/main.js"></script>
 </body>
 </html>
