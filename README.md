@@ -14,7 +14,7 @@
 This project is a dynamic, database-driven personal portfolio website designed to showcase professional skills and academic background. It bridges the gap between a static resume and a live application by featuring a secure **Administrative Dashboard** that allows for real-time content management without modifying the source code.
 
 * **🌐 Live Demo:** [https://sudenurportfolio.infinityfreeapp.com](https://sudenurportfolio.infinityfreeapp.com)
-* **💻 GitHub Repository:** [(https://www.google.com/search?q=https://github.com/sudengungor/portfolio](https://github.com/sudengungor/portfolio)
+* **💻 GitHub Repository:** [https://www.google.com/search?q=https://github.com/sudengungor/portfolio](https://github.com/sudengungor/portfolio)
 
 ---
 
