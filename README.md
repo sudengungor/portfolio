@@ -1,44 +1,54 @@
-# 🚀 Sudenur Güngör - Personal Portfolio Project
+# 🚀 Full-Stack Web Portfolio Project
 
-A modern, responsive, and dynamic web portfolio developed for the **Haliç University Software Engineering** program. This project features a full-stack architecture with a dedicated administrative dashboard for content management.
+### 👤 Student Information
 
-## 🔗 Live Demo
+* **Name:** Sudenur Güngör
+* **University:** Haliç University
+* **Department:** Software Engineering (3rd Year)
+* **Course:** Web Technologies
 
-You can access the live version of the project via the link below:
+---
 
-**[👉 Click Here for Live Demo](https://sudenurportfolio.infinityfreeapp.com)**
+## 🌟 Project Overview
 
-## 🛠️ Tech Stack
+This project is a dynamic, database-driven personal portfolio website. It serves as a professional showcase of my skills and projects, featuring a secure **Administrative Dashboard** for real-time content management.
 
-* **Frontend:** HTML5, CSS3 (Custom Variables, Flexbox, Grid), JavaScript (Vanilla JS, Fetch API)
-* **Backend:** PHP (MySQLi, Session Management)
-* **Database:** MySQL
-* **Version Control:** Git & GitHub
+* **🌐 Live Demo:** [https://sudenurportfolio.infinityfreeapp.com](https://sudenurportfolio.infinityfreeapp.com)
+* **💻 GitHub Repository:** [https://github.com/sudengungor/portfolio](https://www.google.com/search?q=https://github.com/sudengungor/portfolio)
 
-## ✨ Key Features
+---
 
-* **Dynamic Content Management:** Add or delete projects in real-time via a secure Admin Dashboard.
-* **Asynchronous Interactions:** Implemented `Fetch API` for contact form submissions and project loading to ensure a seamless UI/UX without page refreshes.
-* **Security First:** Robust protection against SQL Injection using `Prepared Statements`. Unauthorized access is prevented via server-side `Session` validation.
-* **Dark Mode Persistence:** Integrated theme switching that remembers user preference using `localStorage`.
-* **Clean Architecture:** Organized directory structure separating assets (CSS/JS) from business logic (PHP).
+## 🛠️ Technical Stack
 
-## 📂 Project Structure
+I used a modern and robust stack to ensure performance and security:
 
-```text
-├── assets/             # CSS stylesheets and JavaScript files
-├── php/                # Database connection and CRUD logic
-├── images/             # Media assets and profile photos
-├── index.php           # Public-facing portfolio (Home)
-├── admin_dashboard.php # Administrative control panel
-├── login.php           # Secure login interface
-└── portfolio_db.sql    # Database schema export
+* **🎨 Frontend:** HTML5, CSS3 (Flexbox & Grid), JavaScript (ES6+)
+* **⚙️ Backend:** PHP 8.x (Session & Cookie Management)
+* **🗄️ Database:** MySQL (Relational Data Management)
+* **📱 Mobile:** Flutter & Dart (Dynamic Timer Integration)
+* **☁️ Hosting:** InfinityFree with SSL Support
 
-```
+---
 
-## ⚙️ Installation & Setup
+## 💎 Key Features
 
-1. Clone the repository to your local machine.
-2. Import `portfolio_db.sql` into your `phpMyAdmin` or MySQL server.
-3. Configure your database credentials in `php/database_connection.php`.
-4. Run the project using a local PHP server environment (XAMPP, WAMP, etc.).
+* **🔐 Secure Admin Dashboard:** Protected by PHP Sessions. Only authorized access can add or delete projects.
+* **📂 Dynamic Content:** Projects are fetched from MySQL and rendered using the Fetch API (AJAX).
+* **🛡️ Security First:** Implemented **Prepared Statements** against SQL Injection and `htmlspecialchars()` against XSS.
+* **🌙 Dark Mode:** A persistent theme switcher that remembers user preference via `localStorage`.
+* **📱 Fully Responsive:** Mobile-first design that works perfectly on all screen sizes.
+
+---
+
+## 📈 Development Journey
+
+1. **Phase 1:** Designed the MySQL schema for projects, messages, and admins.
+2. **Phase 2:** Developed the backend logic for secure login and CRUD operations.
+3. **Phase 3:** Built a responsive UI with advanced CSS and DOM manipulation.
+4. **Phase 4:** Deployed the application to a live server and configured the database.
+
+---
+
+## 🎯 Conclusion
+
+This project successfully integrates all technologies learned during the semester into a production-ready application. It demonstrates a solid understanding of both frontend and backend engineering principles.
