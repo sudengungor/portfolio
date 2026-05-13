@@ -6,7 +6,7 @@ A modern, responsive, and dynamic web portfolio developed for the **Haliç Unive
 
 You can access the live version of the project via the link below:
 
-**[👉 Click Here for Live Demo]([http://sudenurportfolio.infinityfreeapp.com](https://sudenurportfolio.infinityfreeapp.com/))**
+**[👉 Click Here for Live Demo](https://sudenurportfolio.infinityfreeapp.com)**
 
 ## 🛠️ Tech Stack
 
