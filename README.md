@@ -4,8 +4,8 @@
 
 * **Name:** Sudenur Güngör
 * **University:** Haliç University
-* **Department:** Software Engineering (3rd Year)
-* **Course:** Web Technologies
+* **Department:** Software Engineering 
+* **Course:** Internet & Web Programming
 
 ---
 
