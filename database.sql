@@ -1,6 +1,3 @@
-CREATE DATABASE IF NOT EXISTS portfolio_db;
-USE portfolio_db;
-
 -- Projeler Tablosu 
 CREATE TABLE IF NOT EXISTS projects (
     id INT AUTO_INCREMENT PRIMARY KEY,

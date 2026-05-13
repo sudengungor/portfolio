@@ -83,18 +83,15 @@ include 'php/database_connection.php';
                                     <td>2023 - Present</td>
                                     <td>Haliç University</td>
                                     <td>BSc Software Engineering</td>
-                                </tr>
-                                <tr>
+                                </tr><tr>
+                                    <td>2024</td>
+                                    <td>Frontend Web Development</td>
+                                    <td>HTML5, CSS3 & JavaScript Certification</td>
+                                </tr> <tr>
                                     <td>2026</td>
                                     <td>Mobile Dev Summit</td>
-                                    <td>Mobile App Technologies</td>
-                                </tr>
-                                <tr>
-                                    <td>2025</td>
-                                    <td>Data Science Workshop</td>
-                                    <td>Python & Statistical Analysis</td>
-                                </tr>
-                            </tbody>
+                                    <td>Mobile Development & Flutter</td>
+                                </tr></tbody>
                         </table>
                     </div>
                 </div>
