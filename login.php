@@ -1,5 +1,6 @@
 <?php
 session_start();
+// ÖN KONTROL
 if(isset($_SESSION['admin_logged_in'])) { header('Location: admin_dashboard.php'); exit; }
 ?>
 <!DOCTYPE html>
@@ -7,9 +8,10 @@ if(isset($_SESSION['admin_logged_in'])) { header('Location: admin_dashboard.php'
 <head>
     <meta charset="UTF-8">
     <title>Admin Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body style="display:flex; justify-content:center; align-items:center; height:100vh; background:#f4f4f4;">
+    
     <form action="php/admin_login_process.php" method="POST" style="background:white; padding:2rem; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
         <h2>Admin Login</h2>
         <input type="text" name="username" placeholder="Username" required style="display:block; margin-bottom:10px; width:100%; padding:8px;">

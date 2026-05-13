@@ -101,7 +101,7 @@ include 'php/database_connection.php';
             </div>
         </section>
 
-        <!-- Projects Section (DÜZELTİLEN ALAN) -->
+        <!-- Projects Section -->
         <section id="projects" class="projects-section">
             <div class="container">
                 <h2>Featured Projects</h2>
@@ -118,12 +118,11 @@ include 'php/database_connection.php';
                             echo '    <h3>' . htmlspecialchars($row['title']) . '</h3>';
                             echo '    <p>' . htmlspecialchars($row['description']) . '</p>';
                             echo '    <p class="tech-stack"><strong>Tech:</strong> ' . htmlspecialchars($row['tech_stack']) . '</p>';
-                           // github_url isminin doğru olduğundan emin ol
                             echo '<a href="' . htmlspecialchars($row['github_url']) . '" target="_blank" class="btn">View on GitHub</a>';
                             echo '</div>';
                         }
                     } else {
-                        echo "<p>Henüz bir proje eklenmemiş. Admin panelinden eklemeyi dene!</p>";
+                        echo "<p>No projects have been added yet. Try adding one from the admin panel!</p>";
                     }
                     ?>
                 </div>

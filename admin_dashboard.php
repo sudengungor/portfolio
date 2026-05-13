@@ -13,7 +13,7 @@ include 'php/database_connection.php';
 <head>
     <meta charset="UTF-8">
     <title>Admin Dashboard | Project Management</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="admin-body">
     <div class="admin-wrapper">
@@ -40,9 +40,10 @@ include 'php/database_connection.php';
                 $result = $conn->query("SELECT * FROM projects ORDER BY id DESC");
                 
                 while($row = $result->fetch_assoc()) {
-                    // SATIR İÇİ STYLE'LARI SİLDİK, CLASS EKLEDİK
                     echo "<div class='manage-project-item'>";
+                    // XSS KORUMASI: Kullanıcıdan gelen veriyi zararsız metne dönüştürerek güvenlik sağlar.
                     echo "<div><strong>" . htmlspecialchars($row['title']) . "</strong></div>";
+                    // SİLME İŞLEMİ: Silme komutu öncesi kullanıcıdan JS ile onay alır.
                     echo "<a href='php/delete_project.php?id=" . $row['id'] . "' onclick='return confirm(\"Are you sure?\")'>Delete</a>";
                     echo "</div>";
                 }

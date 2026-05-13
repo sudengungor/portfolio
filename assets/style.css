@@ -1,11 +1,11 @@
 /* --- 1. Global Reset & Variables --- */
 :root {
-    --primary-color: #db2777;    /* Canlı pembe */
-    --secondary-color: #9d174d;  /* Koyu pembe/vişne */
-    --bg-color: #fff1f2;         /* Çok açık pembe arka plan */
-    --text-color: #4c0519;       /* Çok koyu pembe metin */
-    --card-bg: #ffffff;          /* Temiz beyaz kartlar */
-    --border-color: #fecdd3;     /* İnce pembe kenarlıklar */
+    --primary-color: #db2777;    
+    --secondary-color: #9d174d;  
+    --bg-color: #fff1f2;         
+    --text-color: #4c0519;       
+    --card-bg: #ffffff;          
+    --border-color: #fecdd3;     
     --transition: all 0.3s ease;
 }
 
@@ -79,6 +79,11 @@ section {
 }
 
 /* --- 3. Hero Section --- */
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
 .hero-section {
     height: 100vh;
     display: flex;
@@ -91,7 +96,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
@@ -104,11 +109,9 @@ section {
     box-shadow: 0 0 20px rgba(219, 39, 119, 0.3);
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-}
 
+
+/* --- REUSABLE BUTTON COMPONENTS --- */
 .btn {
     display: inline-block;
     padding: 0.8rem 2rem;
@@ -177,7 +180,6 @@ section {
 }
 
 .project-card {
-    /* Eski hali: background: #2a0a1a; -> Bunu siliyoruz */
     background: var(--card-bg); /* Değişkeni buraya bağladık */
     border-radius: 12px;
     padding: 15px;
@@ -200,7 +202,7 @@ section {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* --- 6. Admin & Form Styles --- */
+/* --- 6. Admin Dashboard & Form Styles --- */
 .admin-wrapper {
     max-width: 1000px;
     margin: 100px auto;
@@ -227,7 +229,7 @@ input, textarea {
     font-family: inherit;
 }
 
-/* Proje Listesi Kutuları (İstediğin Sade Hal) */
+/* Proje Listesi Kutuları */
 .manage-project-item, 
 .manage-projects div[style*="background: #fff"] {
     background-color: var(--card-bg) !important;
@@ -250,7 +252,7 @@ input, textarea {
 
 /* Sil Butonu */
 .manage-projects a {
-    color: #e11d48 !important; /* Modern kırmızı */
+    color: #e11d48 !important; 
     text-decoration: none;
     font-weight: 700;
 }
@@ -275,7 +277,7 @@ footer {
     gap: 1.5rem;
 }
 
-/* --- 8. Responsive --- */
+/* --- 8. Responsive Media Queries --- */
 @media (max-width: 768px) {
     .hero-content h1 { font-size: 2.5rem; }
     .hero-container { flex-direction: column; }

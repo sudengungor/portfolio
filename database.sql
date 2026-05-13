@@ -1,14 +1,14 @@
 CREATE DATABASE IF NOT EXISTS portfolio_db;
 USE portfolio_db;
 
--- Projeler Tablosu (Tam uyumlu isimlerle)
+-- Projeler Tablosu 
 CREATE TABLE IF NOT EXISTS projects (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT,
     tech_stack VARCHAR(100),
     image_url VARCHAR(255) DEFAULT 'https://via.placeholder.com/300x200',
-    github_url VARCHAR(255), -- Hata veren yer burasıydı, düzelttik.
+    github_url VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -30,4 +30,4 @@ CREATE TABLE IF NOT EXISTS admins (
 );
 
 -- İlk Giriş Bilgisi
-INSERT IGNORE INTO admins (username, password) VALUES ('sudenur', '12345');
+INSERT IGNORE INTO admins (username, password) VALUES ('admin', '12345');

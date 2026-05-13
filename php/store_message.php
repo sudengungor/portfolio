@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = $_POST['subject'];
     $message = $_POST['message'];
 
-    // MySQLi kullanarak güvenli kayıt (Prepared Statement)
+    // MySQLi kullanarak güvenli kayıt 
     $sql = "INSERT INTO messages (full_name, email, subject, message) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ssss", $name, $email, $subject, $message);
