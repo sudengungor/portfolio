@@ -2,6 +2,12 @@
 
 A modern, responsive, and dynamic web portfolio developed for the **Haliç University Software Engineering** program. This project features a full-stack architecture with a dedicated administrative dashboard for content management.
 
+## 🔗 Live Demo
+
+You can access the live version of the project via the link below:
+
+**[👉 Click Here for Live Demo](http://sudenurportfolio.infinityfreeapp.com)**
+
 ## 🛠️ Tech Stack
 
 * **Frontend:** HTML5, CSS3 (Custom Variables, Flexbox, Grid), JavaScript (Vanilla JS, Fetch API)
